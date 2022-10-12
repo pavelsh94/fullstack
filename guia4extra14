@@ -1,0 +1,63 @@
+//Realizar un programa que permita visualizar el resultado del producto de una matriz de
+//enteros de 3x3 por un vector de 3 elementos. Los valores de la matriz y el vector pueden
+//inicializarse evitando así el ingreso de datos por teclado.
+Algoritmo extra14
+	Definir mt, v,v2 Como Entero
+	Dimension mt(3,3)
+	Dimension v(3)
+	Dimension v2(3)
+	
+	rellenar(mt,v)
+	multi(mt,v,v2)
+	impresion(mt,v,v2)
+	
+FinAlgoritmo
+SubProceso rellenar(mt,v)
+	Definir i,j Como Entero
+	Para i<-0 Hasta 2 Con Paso 1 Hacer
+		Para j<-0 Hasta 2 Con Paso 1 Hacer
+			mt(i,j)=Aleatorio(1,10)
+		Fin Para
+	Fin Para
+	
+	Para i<-0 Hasta 2 Con Paso 1 Hacer
+		v(i)=Aleatorio(1,100)
+	Fin Para
+FinSubProceso
+
+SubProceso multi(mt,v,v2)
+	Definir i Como Entero
+	Para i<-0 Hasta 2 Con Paso 1 Hacer
+			//v2(0)=mt(0,0)*v(0) + mt(0,1)*v(1) + mt(0,2)*v(2)
+			//v2(1)=mt(1,0)*v(0) + mt(1,1)*v(1) + mt(1,2)*v(2)
+			//v2(2)=mt(2,0)*v(0) + mt(2,1)*v(1) + mt(2,2)*v(2)
+			v2(i)=mt(i,0)*v(0) + mt(i,1)*v(1) + mt(i,2)*v(2)
+	Fin Para
+FinSubProceso
+
+SubProceso impresion (mt,v,v2)
+	Definir i,j Como Entero
+	Para i<-0 Hasta 2 Con Paso 1 Hacer
+		Para j<-0 Hasta 2 Con Paso 1 Hacer
+			si j=2 Entonces
+				Escribir mt(i,j)
+			sino
+				Escribir Sin Saltar mt(i,j) " "
+			FinSi
+		Fin Para
+	Fin Para
+	
+	Escribir "----------------------------"
+	
+	Para i<-0 Hasta 2 Con Paso 1 Hacer
+		Escribir v(i)
+	FinPara
+	
+	Escribir "----------------------------"
+	
+	Para i<-0 Hasta 2 Con Paso 1 Hacer
+		Escribir v2(i)
+	FinPara
+	
+FinSubProceso
+	

@@ -1,0 +1,39 @@
+//Rellenar en un subproceso una matriz cuadrada con números aleatorios salvo en la diagonal
+//	principal, la cual debe rellenarse con ceros. Una vez llena la matriz debe generar otro
+//	subproceso para imprimir la matriz.
+Algoritmo ejercicio11
+	Definir mt,n Como Entero
+	Escribir "Ingrese tamaño de la matriz"
+	leer n
+	Dimension mt(n,n)
+	rellenar(mt,n)
+	impresion(mt,n)
+	
+FinAlgoritmo
+
+SubProceso rellenar(mt,n)
+	Definir i,j Como Entero
+	Para i<-0 Hasta n-1 Con Paso 1 Hacer
+		Para j<-0 Hasta n-1 Con Paso 1 Hacer
+			mt(i,j)=Aleatorio(-100,100)
+			si i=j Entonces
+				mt(i,j)=0
+			FinSi
+		Fin Para
+	Fin Para
+FinSubProceso
+
+SubProceso impresion(mt,n)
+	Definir i,j Como Entero
+	Para i<-0 Hasta n-1 Con Paso 1 Hacer
+		Para j<-0 Hasta n-1 Con Paso 1 Hacer
+			si j<>n-1 Entonces
+				Escribir mt(i,j) " | " Sin Saltar
+			SiNo
+				Escribir mt(i,j)
+			FinSi
+		Fin Para
+		Escribir ""
+	Fin Para
+FinSubProceso
+	

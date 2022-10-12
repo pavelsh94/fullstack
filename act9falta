@@ -1,0 +1,25 @@
+Algoritmo sin_titulo
+//	Escribir un programa que realice la búsqueda lineal de un número entero ingresado por el
+//	usuario en una matriz de 5x5, llena de números aleatorios y devuelva por pantalla las
+//	coordenadas donde se encuentra el valor, es decir en que fila y columna se encuentra. En
+	//	caso de no encontrar el valor dentro de la matriz se debe mostrar un mensaje.
+	Definir vector , i, m, j, num Como Entero
+	Dimension vector(5,5)
+	Escribir "ingrese 3 valores"
+	para i<-0 Hasta 4 Con Paso 1 Hacer
+		Para j=0 Hasta 4 Con Paso 1 Hacer
+			Escribir Sin Saltar "Ingrese el valor [" ,i+1,",", j+1, "]="
+			vector(i,j)=aleatorio(0,20)
+			Mostrar vector(i,j)
+		FinPara
+	FinPara
+	Escribir "Ingrese un numero a buscar:"
+	Leer num
+	Para i<-0 Hasta 4 Con Paso 1 Hacer
+		Para j=0 Hasta 4 Hacer
+			si num=j Entonces
+				Escribir "El " num "se encuentra en la fila: " i "y en la columna: " j
+			FinSi
+		FinPara
+	Fin Para
+FinAlgoritmo

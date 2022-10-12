@@ -1,0 +1,58 @@
+//Escribir un programa que realice la búsqueda lineal de un número entero ingresado por el
+//usuario en una matriz de 5x5, llena de números aleatorios y devuelva por pantalla las
+//coordenadas donde se encuentra el valor, es decir en que fila y columna se encuentra. En
+//caso de no encontrar el valor dentro de la matriz se debe mostrar un mensaje.
+Algoritmo ejercicio9
+	
+	Definir mt,i,j,x, num Como Entero
+	
+	Dimension mt(5,5)
+	rellenar(mt)
+	
+	Escribir "Ingrese número a buscar"
+	leer num
+	
+	x=0
+	impresion(mt)
+	
+	Para i<-0 Hasta 4 Con Paso 1 Hacer
+		Para j<-0 Hasta 4 Con Paso 1 Hacer
+			si mt(i,j)= num Entonces
+				escribir "Las coordenadas del número buscado es (" i "," j ")"
+				x=x+1
+			FinSi
+		Fin Para
+	Fin Para
+	
+	si x=0 Entonces
+		Escribir "El número ingresado no se encuentra en la matriz"
+	FinSi
+	
+	
+FinAlgoritmo
+
+SubProceso rellenar(mt)
+	Definir i,j Como Entero
+	Para i<-0 Hasta 4 Con Paso 1 Hacer
+		Para j<-0 Hasta 4 Con Paso 1 Hacer
+			mt(i,j) = azar(100)
+		Fin Para
+	Fin Para
+FinSubProceso
+
+SubProceso impresion(mt)
+	Definir i,j Como Entero
+	Para i<-0 Hasta 4 Con Paso 1 Hacer
+		Para j<-0 Hasta 4 Con Paso 1 Hacer
+			si j<>4 Entonces
+				Escribir mt(i,j) " | " Sin Saltar
+			SiNo
+				Escribir mt(i,j)
+			FinSi
+		Fin Para
+		Escribir ""
+	Fin Para
+FinSubProceso
+
+
+

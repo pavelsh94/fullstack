@@ -1,0 +1,44 @@
+//Dada una matriz de orden n * m (donde n y m son valores ingresados por el usuario) realizar
+//un subprograma que llene la matriz de numeros aleatorios. Despues, crearemos otro
+//subprograma que calcule y muestre la suma de los elementos de la matriz. Mostrar la matriz y
+//los resultados por pantalla.
+Algoritmo ejercicio10
+	definir n,m,mt Como Entero
+	
+	Escribir "Ingrese los subíndices a tomar la matriz "
+	Leer n,m
+	
+	Dimension mt(n,m)
+	
+	rellenar(mt,n,m)
+	
+	suma(mt,m,n)
+	
+FinAlgoritmo
+
+SubProceso rellenar(mt,n,m)
+	Definir i,j Como Entero
+	Para i<-0 Hasta n-1 Con Paso 1 Hacer
+		Para j<-0 Hasta m-1 Con Paso 1 Hacer
+			mt(i,j)=Aleatorio(-100,100)
+			si j<>m-1 Entonces
+				Escribir mt(i,j) " | " Sin Saltar
+			SiNo
+				Escribir mt(i,j)
+			FinSi
+		Fin Para
+		Escribir ""
+	Fin Para
+FinSubProceso
+
+SubProceso suma(mt,m,n)
+	Definir i,j,sum Como Entero
+	sum=0
+	Para i<-0 Hasta n-1 Con Paso 1 Hacer
+		Para j<-0 Hasta m-1 Con Paso 1 Hacer
+			sum=sum+mt(i,j)
+		Fin Para
+	Fin Para
+	Escribir "La suma de todos los dígitos de la matriz es : " sum
+FinSubProceso
+	
